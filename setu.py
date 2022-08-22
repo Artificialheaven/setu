@@ -1,6 +1,5 @@
 import requests
 import json
-#import multi
 
 def getSetuUrl():
     try:
