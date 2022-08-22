@@ -13,3 +13,5 @@
   - asyncio
   - threading
   - configparser
++ 需要 pyinstaller
+  - 运行 pyinstaller main.spec
