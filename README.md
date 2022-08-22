@@ -15,3 +15,6 @@
   - configparser
 + 需要 pyinstaller
   - 运行 pyinstaller main.spec
+
+# 其他
+作者其实不太会Python，这个功能估计也有不少大佬写过了。新手可以看一看，不怎么成熟。
