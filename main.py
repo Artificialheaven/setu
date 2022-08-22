@@ -8,17 +8,13 @@ import setu
 
 def receiveGroupMsg(group_id, user_id, msg):
     if msg == 'setu':
-        # Bot.sendGroupMsg(group_id, '[CQ:image,file=' + setu.getSetuUrl() + ",c=8]")
         Bot.sendGroupMsg(group_id, '别着急，涩图马上就来啦。')
         threading.Thread(target=setu.sendSetuG, args=(group_id, Bot.sendGroupMsg)).start()
-        #   setu.sendSetuG(group_id, Bot.sendPrivateMsg)
     return
 
 
 def receivePrivateMsg(user_id, msg):
-    #   Bot.sendPrivateMsg(user_id,f'你发送了：{msg}')
     if msg == 'setu':
-        # Bot.sendPrivateMsg(user_id, '[CQ:image,file=' + setu.getSetuUrl() + ",c=8]")
         Bot.sendPrivateMsg(user_id, '别着急，涩图马上就来啦。')
         threading.Thread(target=setu.sendSetuP, args=(user_id, Bot.sendPrivateMsg)).start()
     return
@@ -30,4 +26,7 @@ ip = config['Bot']['ip']
 hp = config['Bot']['hp']
 wp = config['Bot']['wp']
 Bot = Bot.Bot(ip, hp, wp)
+print('即将启动 setu 服务，目标位于http://%s:%s/ & ws://%s:%s' % (ip, hp, ip, wp))
+print('高性能しぶそうしん機 !!')
+
 asyncio.run(Bot.run(receiveGroupMsg, receivePrivateMsg))
